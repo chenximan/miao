@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html{
+            height:100%;
+        }
+        body{
+            height:100%;
+            margin:0;
+        }
+        div{
+            height: 100%;
+        }
+        header{
+            height:60px;
+            background-color: antiquewhite;
+            border-bottom: 3px solid black;
+            box-sizing: border-box;
+        }
+        main{
+            font-size:0;
+            height:calc(100% - 60px);
+        }
+        main > *{
+            font-szie: 16px;
+            display:inline-block;
+            vertical-align: top;
+        }
+        aside{
+            background-color: burlywood;
+            width: 100px;
+            height: 100%;
+            border-right: 3px solid black;
+            box-sizing: border-box;
+        }
+        section{
+            background-color: turquoise;
+            width:calc(100% - 100px);
+            height: 100%;
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <div>
+        <header>header</header>
+        <main>
+            <aside>sidebar</aside>
+            <section>section</section>
+        </main>
+
+    </div>
+</body>
+</html>
