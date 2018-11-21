@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,96 +10,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>css-block-layout</title>
-<style>
-    body {
-        margin： 0；
-    }
-   .header {
-       background-color: black;
-       color: white;
-       margin-bottom: 15px;
-   } 
-   .header p {
-       width: 600px;
-       margin: 0 calc(50% - 300px);
-   }
-   .content {
-       width: 600px;
-       margin-left: auto;
-       margin-right: auto;
-   }
-   ul {
-       padding-left: 0;
-       clear: both;
-       list-style-type: none;
-   }
-   .content>.float>li {
-       background-color: antiquewhite;
-       border: 3px solid black;
-       box-sizing: border-box;
-       width: 180px;
-       height: 40px;
-       text-align: center;
-       line-height: 34px;
-       float: left;
-       margin-right: 30px;
-       margin-bottom:  15px;
-   }
-.content>.float>li:hover {
-    background-color: red;
-}
-.content>.float>li:nth-child(3n) {
-    margin-right: 0;
-}
-.content>.dotted>li {
-    border-bottom: 1px dotted black;
-}
-.content>.dotted>li:last-child {
-    border-bottom: none;
-}
-.footer {
-    background-color: darksalmon;
-    text-align: center;
-    margin-top: 10px;
-}
-.footer>p {
-    margin: 0;
-}
-</style>
+    <style>
+        body {
+            margin: 0;
+        }
+        header {
+          background-color: black;
+          color: whitesmoke;
+          width: 600px;
+          padding-left: calc(50% - 300px);
+          padding-right: calc(50% - 300px);
+        }
+        main {
+            width: 600px;
+            margin: auto;
+        }
+       
+        p {
+            margin-top: 25px;
+        }
+        ul {
+            list-style-type: none;
+        }
+        ul li {
+            box-sizing: border-box;
+            width: 180px;
+            height: 40px;
+            border: 3px solid;
+            padding: 0;
+            margin-bottom: 15px;
+            text-align: center;
+            line-height: 34px;
+        }
+        ul li:nth-child(n+5) {
+            margin-left: 210px;
+        }
+        ul li:nth-child(n+9) {
+            margin-left: 420px;
+        }
+        ul li:nth-child(4n+5) {
+            margin-top: -220px;
+        }
+        ol {
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+        }
+        ol li {
+            border-bottom:  1px dotted;
+            margin-bottom: -1px;
+        }
+        ul>li{
+            width: 180px;
+            height: 40px;
+            border: 3px solid;
+            text-align: center;
+            line-height: 40px;
+            background-color: #fec0ce;
+            margin-bottom: 15px;
+        }
+        ul>li:hover{
+             background-color: red;
+        }
+        ol>li{
+            border-bottom: 1px dotted;
+            overflow:hidden;
+        }
+        footer>p{
+            background-color: #ec86ec;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <div class="header">
-            <p>hello world 请调整浏览器窗口大小查看效果</p>
-    </div>
-    <div class="content">
-        <div class="text">
-                页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px
-        </div>
-        <ul class="float">
+    <header>
+        hello world 请调整浏览器窗口大小查看效果
+    </header>
+    <main>
+        <p>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
+        <ul>
             <li>宽180高40(包含边框)</li>
-            <li>产品</li>
-            <li>产品</li>
-            <li>水品间隙30px</li>
-            <li>产品</li>
-            <li>产品</li>
+            <li>水平间隙30px</li>
             <li>垂直间隙15px</li>
-            <li>产品</li>
-            <li>产品</li>
             <li>边框宽度3px</li>
             <li>产品</li>
             <li>产品</li>
+            <li>产品</li>
+            <li>产品</li>
+            <li>产品</li>
+            <li>产品</li>
+            <li>产品</li>
+            <li>产品</li>
         </ul>
-        <ul class="dotted">
+        <ol>
             <li>link</li>
             <li>link</li>
             <li>link</li>
             <li>link</li>
-            <li>link</li>
-        </ul>
-    </div>
-    <div class="footer">
-        <p>@版权所有</p>
-        <p>本页所有布局均使用块元素</p>
-    </div>
+        </ol>
+    </main>
+    <footer>
+    <p>@版权所有</p>
+    <p>本页所有布局均使用块元素</p>
+    </footer>
+
 </body>
 </html>
