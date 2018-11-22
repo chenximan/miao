@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+            margin: 0;
+            box-sizing:border-box;
+            border: 1px solid;
+        }
+        .wrapper{
+            height: 100%;
+            font-size: 0;
+        }
+        .wrapper > *{
+            font-size:initial;
+            display: inline-block;
+            height: 100%;
+            width: 20%;
+            border-right: 1px solid;
+            vertical-align: top;
+        }
+        .a2{
+            width:40%;
+        }
+        .a2 h1{
+            height: 80px;
+            margin: 0;
+            border-bottom: 1px solid;
+        }
+        .a2 main{
+            height:calc(100% - 80px);
+        }
+        .a4{
+            border-right: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <section class="a1">1</section>
+        <section class="a2">
+            <h1>嘿嘿</h1>
+            <main>哈哈</main>
+        </section>
+        <section class="a3">3</section>
+        <section class="a4">4</section>
+    </div>
+    
+</body>
+</html>
