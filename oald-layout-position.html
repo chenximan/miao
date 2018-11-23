@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html,body{
+  margin: 0;
+  height: 100%;
+}
+
+div{
+  font-size: 0;
+  height: 100%;
+  width: 100%;
+}
+
+div > *{
+  box-sizing:border-box;
+  font-size: initial;
+}
+
+.a1{
+  border:1px solid;
+  width: 20%;
+  height: 100%;
+}
+.a2{
+  border: 1px solid;
+  width: 40%;
+  height: 100%;
+  position: relative;
+  top:-100%;
+  right:-20%;
+}
+.a3{
+  border:1px solid;
+  width: 20%;
+  height: 100%;
+  position: relative;
+  top:-200%;
+  right:-60%;
+}
+h2{
+  margin: 0;
+  height: 50px;
+  border: 1px solid;
+}
+main{
+  height:calc(100% - 50px);
+}
+.a4{
+  border:1px solid;
+  width: 20%;
+  height: 100%;
+  position: relative;
+  top:-300%;
+  right:-80%;
+}
+</style>
+</head>
+<body>
+  <div>
+    <section class="a1"></section>
+    <section class="a2">
+      <h2></h2>
+      <main></main>
+    </section>
+    <section class="a3"></section>
+    <section class="a4"></section>
+  </div>
+</body>
+</html>
