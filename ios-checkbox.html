@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ios-checkbox</title>
+    <style>
+        * {
+            outline: none;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #switch{
+            display: none;
+        }
+        p{
+            text-align:center;
+        }
+        #switch-wrapper{
+            display:block;
+            width: 200px;
+            height: 140px;
+            margin: 50px auto;
+            position:relative;
+            overflow:hidden;
+        }
+        #switch-wrapper #switch{
+            float:left;
+        }
+        .switch-border{
+            position:absolute;
+            width: 176px;
+            height: 106px;
+            left: 12px;
+            top: 17px;
+            border-radius: 55px;
+            overflow: hidden;
+            background-color:#e6e6e6;
+        }
+        .switch-bg-norm{
+            position: absolute;
+            width: 170px;
+            height: 100px;
+            left: 15px;
+            top: 20px;
+            background-color:#fff;
+            border-radius: 55px;
+        }
+        .switch-bg-trans{
+            position: absolute;
+            width: 170px;
+            height: 100px;
+            left: 15px;
+            top: 20px;
+            background-color: #fff;
+            border-radius: 55px;
+        }
+        .switch-button{
+            z-index: 99;
+            content:'';
+            position:absolute;
+            top: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            background-color:#fff;
+            box-shadow: 
+                 2px 2px 6px 0px #aaa,
+                 3px 3px 20px 0px #D8D8D8,
+                 2px 5px 14px 0px #ccc;
+        }
+        #switch:checked ~ .switch-bg-trans{
+            opacity: 0;
+            box-shadow: 0px 0px 0px 100px #4BD763 inset;
+        }
+        #switch:checked ~ .switch-bg-norm{
+            opacity: 0;                  
+        }
+        #switch:checked ~ .switch-border{
+            background-color:#4BD763; 
+            transition: 0.5s;
+        }
+        #switch:not(:checked) ~ .switch-button{
+            left: 12px;
+            right: auto;
+            margin-left: 3px;
+            transition: margin-left 0.1s linear;
+        }
+        #switch:checked ~ .switch-button{
+            box-shadow:
+               -2px 3px 6px 0px #57AA4B,
+               -2px 3px 14px 0px #5CBB4F,
+               -2px 5px 14px 0px #ccc;
+        }
+        #switch:checked ~ .switch-button{
+            left: auto;
+            right: 12px;
+            margin-right: 3px;
+            transition: margin-right 0.1s linear;
+        }
+        #switch-wrapper:focus #switch:not(:checked) ~ .switch-bg-trans{
+            animation: unpress 0.2s forwards;
+        }
+        #switch-wrapper:focus #switch:not(:checked):active ~ .switch-bg-trans{
+            animation: press 1s forwards;
+        }
+        #switch:active ~ .switch-button{
+            width: 120px;
+            transition: width 0.5s;
+        }
+        @keyframes press{
+            100%{
+                box-shadow: 0px 0px 0px 100px #e6e6e6 inset;
+            }
+        }
+        @keyframes unpress{
+            0%{
+                box-shadow: 0px 0px 5px 100px #4BD763 inset;
+                opacity: 0.5;
+            }
+            30%{
+                opacity: 0.5;
+            }
+            100%{
+                box-shadow: 0px 0px 0px 0px #ccc inset;
+                opacity: 0;
+            }
+        }
+        @keyframes color{
+            0% {
+                background-color: #4BD763;
+            }
+            100% {
+                background-color: #e6e6e6;
+            }
+        }
+        @keyframes back{
+            100%{
+                right: -15px;
+            }
+        }
+
+    
+    </style>
+</head>
+<body>
+    <p>ios开关</p>
+    <label id="switch-wrapper" tabindex="1">
+        <input type="checkbox" id="switch">
+        <div class="switch-border"></div>
+        <div class="switch-bg-norm"></div>
+        <div class="switch-bg-trans"></div>
+        <div class="switch-button"></div>
+    </label>
+</body>
+</html>
