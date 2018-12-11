@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>mobike</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .hero{
+            height: 784px;
+            background-image:url(https://mobike.com/cn/assets/themes/moby/img/landing/hero-bg-6.jpg);
+            background-size:cover;
+            background-position: center center;
+            margin-bottom: 1px;
+        }
+        .promos-wrap{
+            overflow: hidden;
+        }
+        .promos{
+            margin:0;
+            padding: 0;
+            list-style-type: none;
+            margin-left: -1px;
+            margin-right: -1px; 
+        }
+        .promos li{
+            box-sizing: border-box;
+            border: 1px solid white;
+            height: 100px;
+            float: left;
+            background-image: url(https://mobike.com/cn/assets/themes/moby/img/promo-03.jpg);
+            background-size: 100% 100%;
+            background-repeat:no-repeat;
+
+        }         
+        @media (max-width: 1080px) {
+            .hero{
+                height: 230px;
+            }
+        }
+        .promos li{
+            width: 50%;
+        }
+        @media (max-width: 700px) {
+            .promos li {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="hero"></div> 
+            <div class="promos-wrap">
+                <ul class="promos">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+        </div>
+
+    
+</body>
+</html>
