@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>noi</title>
+</head>
+<body>
+    <script id="ch0101/01">
+       alert("Hello, World!") 
+    </script>
+    <script id="ch0101/02">
+        var one = 123, two = 456, three = 789;
+        console.log(two)
+    </script>
+    <script id="ch0101/08">
+        var q = "*";
+        console.log("  "+q)
+        console.log(" "+q+q+q)
+        console.log(q+q+q+q+q)
+    </script>
+    <script id="ch0101/09">
+       var q = "*";
+       console.log("  "+q)
+       console.log(" "+q+q+q)
+       console.log(q+q+q+q+q)
+       console.log(" "+q+q+q)
+       console.log("  "+q)
+    </script>
+    <script id="ch0103/01">
+        var a = Number(prompt('A'));
+        var b = Number(prompt('B'));
+        console.log(a + b)
+    </script>
+    <script id="ch0103/02">
+        var a = Number(prompt('A'));
+        var b = Number(prompt('B'));
+        var c = Number(prompt('C'));
+        console.log((a + b)*c)
+    </script>
+    <script id="ch0103/03">
+        var a = Number(prompt('A'));
+        var b = Number(prompt('B'));
+        var c = Number(prompt('C'));
+        console.log(parseInt((a+b)/c))        
+    </script>
+    <script id="ch0103/04">
+        var a = Number(prompt('A'));
+        var b = Number(prompt('B'));
+        console.log(parseInt(a/b) + ' ' + (a%b))
+    </script>
+    <script id="ch0103/05">
+        var a = Number(prompt('A'));
+        var b = Number(prompt('B'));
+        var c= (a/b).toFixed(9);
+        console.log (c)
+    </script>
+    <script id="ch0103/06">
+        var a = Number(prompt('A'));
+        var b = Number(prompt('B'));
+        var c = ((b/a) * 100).toFixed(3);
+        console.log((c)+ "%")
+    </script>
+    <script id="ch0103/07">
+        var x = Number(prompt('X'));
+        var a = Number(prompt('A'));
+        var b = Number(prompt('B'));
+        var c = Number(prompt('C'));
+        var d = Number(prompt('D'));
+        var e = (a * Math.pow(x, 3)) + (b * Math.pow(x, 2)) + (c * Math.pow(x, 1)) + d;
+        console.log (e)
+    </script>
+    <script id="ch0103/08">
+        var a = Number(prompt('f'));
+        var C = ((5 * (a - 32)) / 9).toFixed(5);
+        console.log (C)
+    </script>
+    <script id="ch0103/09">
+        var r = Number(prompt('圆半径'));
+        var p = 3.1415926;
+        var d = r * 2;
+        var p = (pi * d).toFixed(4);
+        var c = (p * r * r).toFixed(4);
+        console.log(d.toFixed(4) + ' ' + p + ' ' + c)
+    </script>
+    <script id="ch0103/10">
+        var r1 = parseFloat(prompt('电阻r1'));
+        var r2 = parseFloat(prompt('电阻r2'));
+        var R = (1/(1/r1 + 1/r2)).toFixed(2);
+        console.log(R)         
+    </script>
+    <script id="ch0103/11">
+        var a = prompt('双精度浮点数a');
+        var b = prompt('双精度浮点数b');
+        var c = (a%b).toFixed(4);
+        console.log(c)       
+    </script>
+    <script id="ch0103/12">
+        var r = prompt('输入球的半径');
+        var p = 3.14;
+        var V = 4/3*p*Math.pow(r,3);
+        console.log(V.toFixed(2))
+    </script>
+    <script id="ch0103/13">
+        var num = prompt('输入一三位数')
+        var str = '';
+        str += String(num % 10);
+        str += (num % 100 - num % 10)/10;
+        str += parseInt(num / 100);
+        console.log(str)
+    </script>
+    <script id="ch0103/14">
+        var h = Number(prompt('小圆桶深度'));
+        var r = Number(prompt('小圆桶底面半径'));
+        var p = 3.14159; 
+        console.log(Math.ceil(20000/(p * r * r * h)))
+    </script>
+    <script id="ch0103/15">
+        
+    </script>
+</body>
+</html>
