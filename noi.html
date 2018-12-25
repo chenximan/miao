@@ -784,5 +784,115 @@
            }
            console.log(n)
         </script>
+        <script id="ch0105/28">
+           var number = +prompt('输入整数');
+           var char = '';
+           var digit;
+           do{
+               digit = number % 10;
+               char += digit + '';
+               number = (number - digit) / 10
+           }while(number > 0)
+           console.log(char)
+        </script>
+        <script id="ch0105/29">
+           var number = Number(prompt('输入整数'));
+           var char = '';
+           var absNumber = Math.abs(number);
+           var notZero = false;
+           while(absNumber > 0){
+               digit = absNumber % 10;
+               absNumber = (absNumber - digit) / 10;
+               if(digit !== 0){
+                   notZero =  true;
+               }if(notZero){
+                   char += digit;
+               }
+           }
+           reverseNumber = Number(char);
+           if(number > 0){
+               console.log(reverseNumber);
+           }else if(number === 0){
+               console.log(0);
+           }else{
+               reverseNumber =  -reverseNumber;
+               console.log(reverseNumber)
+           }
+        </script>
+        <script id="ch0105/30">
+            var m = +prompt('输入一个整数m');
+            var k = +prompt('输入一个正整数k');
+            var temp = m;
+            var str = 'NO';
+            var counter = 0;
+            if(m % 19 === 0){
+                while((m % 10) != m){
+                    if(m % 10 === 3){
+                        counter++;
+                    }
+                    m = parseInt(m / 10);
+                }if(m === 3){
+                    counter++;
+                }if(counter === k){
+                    str = 'YES';
+                }
+            }
+            console.log(str)
+        </script>
+        <script id="ch0105/31">
+            var n = +prompt('输入灯泡的数量n');
+            var m = +prompt('输入人的数量m');
+            var char = '';
+            var light;
+            for(i = 1; i <= n;i++){
+                light = 1;
+                for(j = 1; j <= m;j++){
+                 if(i % j === 0){
+                     light = - light;
+                 }   
+                }
+                if(light === -1){
+                    char += i + ',';
+                }
+            }  
+            console.log(char)
+        </script>
+        <script id="ch0105/32">
+            var n = +prompt('输入项数n');
+            var p = 1;
+            var q = 2;
+            var sum = 0;
+            for(i = 0; i < n; i++){
+                sum += q / p;
+                q = p + q;
+                p = q - p;
+            }
+            console.log(sum.toFixed(4))
+        </script>
+        <script id="ch0105/33">
+            var n =  +prompt('输入项数n');
+            var sum = 0;
+            for(i = 1;i <= n;i++){
+                if(i % 2 === 1){
+                    sum += 1 / i;
+                }else{
+                    sum -= 1 / i;
+                }
+            }
+            sum = sum.toFixed(4);
+            console.log(sum)
+        </script>
+        <script id="ch0105/34">
+            var n = +prompt('输入项数');
+            var sum = 0;
+            for(i = 1; i <= n;i++){
+                var factorial = 1;
+                for( f = 1; f <= i;f++){
+                    factorial *= f;
+                }
+                sum += factorial;
+            }
+            console.log(sum)
+        </script>
 </body>
 </html>
