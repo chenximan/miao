@@ -1,4 +1,4 @@
-var chenximan = function(){
+var chenximan = {
   chunk: function(ary,size) {
     let n = Math.floor(ary.length / size)
     if(size === 0 || n === 0)
@@ -30,4 +30,3 @@ var chenximan = function(){
     return result
   },
 }
-  
