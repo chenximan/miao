@@ -30,4 +30,4 @@ var chenximan = {
     return result
   },
   isArray: value => Object.prototype.toString.call(value) === "[object Array]",
-}
+},
