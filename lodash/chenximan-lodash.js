@@ -5,4 +5,4 @@ var chenximan = {
     if(typeof value === 'function') return true
     return (Array.isArray(value) || Object.prototype.toString.call(value) === '[object Object]')
   },
-},
+}
