@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+       .images{
+           display: flex;
+           align-items: flex-start;
+           transition: all 0.5s;
+       }
+       .images > img{
+          vertical-align: top;
+       }
+       .window{
+           width: 300px;
+           overflow: hidden;
+       }
+       .red{
+         color: red;
+       }
+    </style>
+</head>
+<body>
+    <div class="window">
+      <div class="images" id=images>
+        <img src="http://pic1.win4000.com/wallpaper/2/578ca8a61bdba.jpg" width="300" alt="">
+        <img src="http://pic1.win4000.com/wallpaper/2/578ca8ae660b5.jpg" width="300" alt="">
+        <img src="http://pic1.win4000.com/wallpaper/1/578d9698a7e20.jpg" width="300" alt="">
+        <img src="http://pic1.win4000.com/wallpaper/8/578d8a7e3d7c5.jpg" width="300" alt="">
+      </div>
+    </div>
+    <span id=buttons>
+       <span id="p1">第1张</span>
+       <span id="p2">第2张</span>
+       <span id="p3">第3张</span>
+       <span id="p4">第4张</span>
+    </span>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+       var allButtons = $('#buttons > span')
+
+       for (let i = 0; i < allButtons.length; i++) {
+         $(allButtons[i]).on('click', function(x) {
+           var index = $(x.currentTarget).index()
+           var p = index * -300
+           $('#images').css({
+             transform: 'translate(' + p + 'px)'
+           })
+           n = index
+           activeButton(allButtons.eq(n))
+         })
+       }
+
+       var n = 0;
+       var size = allButtons.length
+       allButtons.eq(n % size).trigger('click')
+
+       var timerId = setTimer()
+       
+       function setTimer(){
+         return setInterval(()=>{
+          n += 1
+          allButtons.eq(n%size).trigger('click') 
+       },3000)
+      }
+       function activeButton($button){
+          $button
+            .addClass('red')
+            .siblings('.red').removeClass('red')
+       }
+       $('.window').on('mouseenter', function(){
+         window.clearInterval(timerId)
+       })
+       $('.window').on('mouseleave', function(){
+        timerId = setTimer()
+       })
+    </script>
+</body>
+</html>
