@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab 切换</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+            text-align: center;
+        }
+
+        .wrap {
+            width: 599px;
+            border: 1px solid #000;
+            margin: 0 auto;
+            margin-top: 20px;
+            overflow: hidden;
+            position: relative;
+            min-height: 150px;
+        }
+
+        .tabs:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .tabs>li {
+            float: left;
+            display: inline-block;
+            width: 199px;
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            cursor: pointer;
+        }
+
+        .tabs>li:last-child {
+            border-right: none;
+        }
+
+        .tabs>li.active {
+            background-color: #eee;
+        }
+
+        .contents {
+            min-height: 100px;
+            width: 1797px;
+            position: absolute;
+            left: 0;
+        }
+
+        .contents>li {
+            float: left;
+        }
+
+        .contents>li:nth-child(1) {
+            background-color: #ff5659;
+            width: 599px;
+            height: 150px;
+        }
+
+        .contents>li:nth-child(2) {
+            background-color: pink;
+            width: 599px;
+            height: 150px;
+        }
+
+        .contents>li:nth-child(3) {
+            background-color: orange;
+            width: 599px;
+            height: 150px;
+        }
+
+        .contents:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="tabs">
+            <li class="active">TAB1</li>
+            <li>TAB2</li>
+            <li>TAB3</li>
+        </ul>
+        <ul class="contents">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
+    <script>
+        $('.tabs li').on('click', function () {
+            var index = $(this).index()
+            $(this).addClass('active').siblings().removeClass('active')
+            $('.contents').animate({
+                left: -index * 599
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>

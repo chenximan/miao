@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>双栏布局</title>
+    <style>
+        .clearfix:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .sider{
+            width: 200px;
+            height: 400px;
+            background: red;
+            float: left;
+        }
+        .content{
+            height: 500px;
+            margin-left: 210px;
+            background:blue;
+        }
+        .footer{
+            height: 30px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="clearfix">
+        <div class="sider">sider固定宽高</div>
+        <div class="content">content自适应宽度</div>
+    </div>
+    <div class="footer">footer</div>
+</body>
+</html>

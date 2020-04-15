@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三栏布局，中间自适应</title>
+    <style>
+        .clear:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .leftSide{
+            width: 200px;
+            height: 400px;
+            background: red;
+            float: left;
+        }
+        .rightSide{
+            width: 200px;
+            height: 400px;
+            background: red;
+            float: right;
+        }
+        .content{
+            margin-left: 210px;
+            margin-right: 210px;
+            height: 500px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="clear">
+        <div class="leftSide">leftSide</div>
+        <div class="rightSide">rightSide</div>
+        <div class="content ">content </div>
+    </div>
+</body>
+</html>

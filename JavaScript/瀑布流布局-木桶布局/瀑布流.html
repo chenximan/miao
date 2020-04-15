@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>瀑布流</title>
+</head>
+
+<body>
+    <style>
+        .content {
+            position: relative;
+        }
+
+        .item {
+            position: absolute;
+            width: 200px;
+            margin-right: 10px;
+            margin-top: 10px;
+            transition: all 0.9s;
+        }
+
+        .h1 {
+            height: 200px;
+            background-color: #f4b300;
+        }
+
+        .h2 {
+            height: 300px;
+            background-color: #691BB8;
+        }
+
+        .h3 {
+            height: 400px;
+            background-color: #006ac1;
+        }
+    </style>
+    <div class="content">
+        <div class="item h1">1</div>
+        <div class="item h2">2</div>
+        <div class="item h3">3</div>
+        <div class="item h1">4</div>
+        <div class="item h2">5</div>
+        <div class="item h3">6</div>
+        <div class="item h1">7</div>
+        <div class="item h2">8</div>
+        <div class="item h3">9</div>
+        <div class="item h1">10</div>
+        <div class="item h2">11</div>
+        <div class="item h3">12</div>
+        <div class="item h2">13</div>
+        <div class="item h2">14</div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        waterFall()
+        $(window).resize(function () {
+            waterFall()
+        })
+        function waterFall() {
+            var colLength = parseInt($('.content').width()/$('.item').width())
+            var itemArr = []  //容器宽度除item的宽度，取整用parseInt,Math.floor
+
+            for (var i = 0; i < colLength; i++) {
+                itemArr[i] = 0
+                console.log(i)
+            }
+            $('.item').each(function () {
+                var minValue = Math.min.apply(null, itemArr)
+                var minIndex = itemArr.indexOf(minValue)
+                $(this).css({
+                    top: itemArr[minIndex],
+                    left: $(this).outerWidth(true) * minIndex
+                })
+                //此处的this是.item;outerWidth(true)是padding，margin,border总和
+                itemArr[minIndex] += $(this).outerHeight(true)
+            })
+        }
+    </script>
+
+
+</body>
+
+</html>

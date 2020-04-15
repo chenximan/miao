@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>jsonp</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+      margin: 8px;
+      padding: 4px;
+      border: 1px solid #ccc;
+      font-size: 25px;
+      line-height: 50px;
+      cursor: pointer;
+    }
+
+    li:hover {
+      background: green;
+    }
+
+    .btn {
+      cursor: pointer;
+      padding: 5px;
+      margin: 30px 0;
+      font-size: 25px;
+      line-height: 50px;
+      color: purple;
+      border: 1px solid red;
+      background: #fff;
+      outline: none;
+    }
+
+    p {
+      text-align: center; // 按钮居中
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="wrap">
+    <li>内容1</li>
+    <li>内容2</li>
+  </ul>
+  <p><button class="btn">加载更多</button></p>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript">
+    $('.btn').on('click', function () {
+      var script = document.createElement('script');
+      script.src = 'http://christina.com:8080/getMore?callback=appendHtml';
+      document.head.appendChild(script);
+      document.head.removeChild(script);
+    })
+    function appendHtml(more) {
+      console.log(more);
+      for (var i = 0; i < more.length; i++) {
+        var li = document.createElement('li');
+        li.innerText = '内容' + more[i];
+        $('.wrap').append(li);
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>几种居中形式</title>
+    <style>
+        .demo1{
+            width: 450px;
+            background-color: #ffcc99;
+            padding: 75px 0;
+            text-align: center;
+            /*上下padding值相等实现垂直居中*/
+        }
+        .demo2{
+            width: 650px;
+            height: 320px;
+            background-color: #ccff96;
+            position: relative;
+        }
+        .content{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 200px;
+            height: 100px;
+            margin-left: -100px;
+            margin-top: -50px;
+            background-color: #99cccc;
+            /*固定宽高，绝对定位居中*/
+        }
+        .center{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 100px;
+            height: 50px;
+            transform: translate(-50%,-50%);
+            background-color: palevioletred;
+            /*CSS3属性，兼容问题*/
+        }
+        .demo3{
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            border: 2px solid paleturquoise;
+        }
+        .demo3:before{
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            /*vertical-align居中适用行内元素*/
+        }
+        img{
+            width: 150px;
+            vertical-align: middle;
+        }
+        .demo4{
+            width: 400px;
+            height: 200px;
+            border: 2px solid pink;
+            vertical-align: middle;
+            text-align: center;
+            display: table-cell;
+            /*table-cell居中*/
+        }
+    </style>
+</head>
+<body>
+    <div class="demo1">
+        <P>利用padding居中</P>
+        <P>利用padding居中</P>
+    </div>
+    <div class="demo2">
+        <div class="content">
+            <div class="center"></div>
+        </div>
+    </div>
+    <div class="demo3">
+        <img src="http://pic.baike.soso.com/ugc/baikepic2/11225/20170729143702-642728240.jpg/0" alt="金宥真">
+    </div>
+    <div class="demo4">
+        <img src="http://pic.baike.soso.com/ugc/baikepic2/11225/20170729143702-642728240.jpg/0" alt="">
+    </div>
+</body>
+</html>
