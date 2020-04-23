@@ -24,6 +24,7 @@ newElement.removeAttrribute('name'); //删除
 添加元素：appendChild() insertBefore()
 删除元素： removeChild()
 代码：
+```
 <ul>
     <li></li>
     <li></li>
@@ -36,6 +37,7 @@ newElement.removeAttrribute('name'); //删除
     ulnode.insertBefore(li,ulnode.firstChild);//添加
     /*删除 ulnode.removeChild(li)*/
 </script> 
+```
 6： element.classList有哪些方法？如何判断一个元素的 class 列表中是包含某个 class？如何添加一个class？如何删除一个class?
 解答：
 add()在元素中添加一个或多个类名。
@@ -47,6 +49,7 @@ toggle(class, trur|false)在元素中切换类名。
 利用removes()删除class
 利用add添加class
 7： 如何选中如下代码所有的li元素？ 如何选中btn元素？
+```
 <div class="mod-tabs">
    <ul>
        <li>list1</li>
@@ -55,7 +58,9 @@ toggle(class, trur|false)在元素中切换类名。
    </ul>
    <button class="btn">点我</button>
 </div>
+```
 解答：
+```
 <div class="mod-tabs">
    <ul>
        <li>list1</li>
@@ -68,3 +73,5 @@ toggle(class, trur|false)在元素中切换类名。
     document.querySelectorAll('.mod-tabs li')
     document.querySelector('.mod-tabs btn')
 </script>
+
+```

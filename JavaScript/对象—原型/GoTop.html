@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
+
+	<meta charset="UTF-8">
+	<title>GOtop</title>
+    <style>
+        *{padding:0; margin:0;}
+        .ct{
+            height:1200px;
+        }
+    </style>
+</head>
+<body>
+	<div class="ct"></div>
+
+	<script>
+		function GoTop(ct,target){
+           this.ct=ct
+           this.target=$('<button class="btn">Go Top</button>')
+           this.target.css({'right':'100px', 
+           	                'bottom':'100px', 
+           	                'position':'fixed',
+           	                'background-color':'red'
+           	                })
+		}
+
+
+		GoTop.prototype={
+            constructor:GoTop,
+            creatNode:function(){
+            this.ct.append(this.target);
+            this.target.hide();
+            },
+
+			bindEvent:function(){
+            var _this=this;
+            $(window).on('scroll',function(){
+                if($(window).scrollTop()>100){
+                    _this.target.show();
+                }else{
+                    _this.target.hide();
+                }
+            });
+            this.target.on('click',function(){
+                $(window).scrollTop(0);
+            })
+        }
+    }
+	
+		var Top = new GoTop($('body'));
+		Top.creatNode();
+		Top.bindEvent();
+	</script>
+</body>
+</html>

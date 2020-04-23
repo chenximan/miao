@@ -4,11 +4,13 @@ $(document).ready()的作用是当DOM准备就绪时，指定一个函数来执�
 大多数情况下，只要DOM结构已完全加载时，脚本就可以运行。传递处理函数给.ready()方法，能保证DOM准备好后就执行这个函数。
 如果执行的代码需要在元素被加载之后才能使用时，（例如，取得图片的大小需要在图片被加载完后才能知道），就需要将这样的代码放到load事件中。
 代码：
+```
 $(document).ready(handler)
 $(handler)
 $(function () {
     console.log('ready');
 });
+```
 2： $node.html()和$node.text()的区别?
 解答：
 $node.html() 获取/设置被选元素的节点包括html结构
@@ -26,12 +28,13 @@ $(".box").text("设置了一个文本") //设置了元素内部的text文本
 jQuery.extend({target[,object] [,objectN]})
 。将两个或更多对象的内容合并到第一个对象
 代码：
+```
 var obj1 = {name: 'chen'}
 var obj = {age: 19}
 var obj = {name:'cqa',age: 20}
 var obj = {}
 var obj = $.extend(obj4,obj1,obj2,obj3) //{name: "cqa", age:20}
-
+```
 4： jQuery 的链式调用是什么？
 解答：
 。使用jQuery方法时，对象方法返回的是对象本身，可以调用对此对象的其他jQuery方法，实现连续调用多个方法。
@@ -42,28 +45,35 @@ var obj = $.extend(obj4,obj1,obj2,obj3) //{name: "cqa", age:20}
 data([key],[value])
 在元素上存放或读取数据，返回jQuery对象。
 代码：
+```
 $("body").data("foo",18);
 $("body").data("abc", {name: "text", sex: 20});
 $("body").data({cba: [a,b,c]});
 $("body").data("foo"); //18
 $("body").data() //{foo: 18, abc: {name: "text", sex: 20},cba:{a,b,c}}
-
+```
 6：
 写出以下功能对应的 jQuery 方法：
 。给元素 $node 添加 class active，给元素 $node 删除 class active
 代码：
+```
 $node.addClass('active') //添加
 $node.removeClass('active') //删除
+```
 。展示元素$node, 隐藏元素$node
 代码：
+```
 $node.show(); //展示
 $node.hide(); //隐藏
+```
 。获取元素$node 的 属性: id、src、title， 修改以上属性
 代码：
 //获取并修改
+```
 $node.attr('id', 'newId');
 $node.attr('src', 'newSrc');
 $node.attr('title', 'newTitle');
+```
 。给$node 添加自定义属性data-src
 代码：
 $node.attr('data-src', "value");
@@ -133,6 +143,7 @@ $node.index();
 。当鼠标激活 input 输入框时让输入框边框变为蓝色，当输入框内容改变时把输入框里的文字小写变为大写，当输入框失去焦点时去掉边框蓝色，控制台展示输入框里的文字
 。当选择 select 后，获取用户选择的内容
 代码：
+```
 <!DOCTYPE html>
 <html lang="en">
 
@@ -240,3 +251,4 @@ $node.index();
 </body>
 
 </html>
+```
