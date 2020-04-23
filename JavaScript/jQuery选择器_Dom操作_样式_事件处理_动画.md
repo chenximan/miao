@@ -15,12 +15,15 @@ jQuery将javaScript的代码进行了封装，处理了兼容性问题，提供A
 
 转化：
 。jQuery对象转化成DOM对象，可以通过[index]的方法
+```
 i var $node = $("#node"); //jQuery对象
 ii var node = $node[0]; //DOM对象
+```
 。DOM对象转化为jQuery对象吧
+```
 i var node = document.getElementById("id"); //DOM对象
 ii var $node = $(node); //jQuery对象
-
+```
 3：jQuery中如何绑定事件？bind、unbind、delegate、live、on、off都有什么作用？推荐使用哪种？使用on绑定事件使用事件代理的写法？
 解答：
 。bind()向匹配元素附加一个或多个事件处理器
@@ -33,6 +36,7 @@ ii var $node = $(node); //jQuery对象
 。off()移除一个事件处理函数
 
 代码：
+```
 //普通的绑定事件，最简单的事件用法
 $('div').on('click', function(e){
     console.log(this);
@@ -50,9 +54,10 @@ $('div').on('click', {name: 'wing', age: 20}, function(e){
     console.log(e.data);
 });
 
+```
 4：jQuery 如何展示/隐藏元素？
 代码1：
-
+```
 <!DOCTYPE html>
 <html lang="en">
 
@@ -88,8 +93,9 @@ $('div').on('click', {name: 'wing', age: 20}, function(e){
 </body>
 
 </html>
+```
 代码2：
-
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -118,10 +124,11 @@ $('div').on('click', {name: 'wing', age: 20}, function(e){
     </script>
 </body>
 </html>
-
+```
 
 5： jQuery 动画如何使用？
 解答：
+```
 <!DOCTYPE html>
 <html lang="en">
 
@@ -295,6 +302,7 @@ $('div').on('click', {name: 'wing', age: 20}, function(e){
 </body>
 
 </html>
+```
 6：如何设置和获取元素内部 HTML 内容？如何设置和获取元素内部文本？
 解答：
 $(元素).html();//不传参则获取html内容
@@ -305,6 +313,7 @@ $(元素).text('hi');//元素内部文字信息设置为'hi'.
 解答：
 读取表单内容：.val([value]) 获取元素属性： attr([attributeName])
 代码：
+```
 <!DOCTYPE html>
 <html lang="en">
 
@@ -338,3 +347,4 @@ $(元素).text('hi');//元素内部文字信息设置为'hi'.
 </body>
 
 </html>
+```

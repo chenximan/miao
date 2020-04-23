@@ -10,12 +10,14 @@ IE会出现白屏现象，这是因为其等待页面组件包括样式表全部
 三、作为主页打开时
 FireFox当把样式表放在页面底部时，会遇到FOUC问题，因为FireFox为了用户体验，对所有都是对页面中的组件逐步呈现。
 此外，引入样式表时，有两种方式：link和@import.
+```
 link:  <link rel = "stylesheet" href = "styles1.css">
 @import : <style type = "text/css">
                     @import url("styles1.css");
                     @import url("styles2.css");
                     ...  ...
            </style>
+ ```
 一个style块可以包含多个@import规则，但@import规则必须放在所有其他规则之前。使用@import规则需要注意的是：即便把@import规则放在文档的head标签中，可能导致页面组件下载时的无序性，进而导致白屏（对于IE）和FOUC（对于FirFox）问题的产生。
 
 3.async和defer的作用是什么？有什么区别
